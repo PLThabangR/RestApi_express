@@ -7,7 +7,7 @@ const app = express();
 //Creating the endpoints for home
 app.get('/',(request,responds)=>{
     //Send respond to the broswer
-    responds.send("<h1>Hello world </h1>");
+    responds.send("<h1>Hello world hvhhj </h1>");
 })
 
 //App.use is a middleware function set a static folder

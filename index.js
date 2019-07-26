@@ -2,9 +2,42 @@
 const express = require('express');
 //import the routes 
 const routes = require('./src/routes/cmRoutes')
+//Import the mongoose
+const mongoose = require('mongoose')
 //const path = require('path')
 //Initialize a variable called app with express
 const app = express();
+
+//Use the created variable to connect to mongodb
+mongoose.connect('mongodb://localhost/test',{
+     useNewUrlParser: true 
+});
+
+
+
+
+//Create a model for the db
+const Cat = mongoose.model('Cat',{name:String});
+
+//An instance of the Cat
+const kitty = new Cat({name:'kitty'});
+
+//use kitty object to call a save method ...a promise is returned we use then to capture the response
+kitty.save().then((response) =>{
+    console.log(response)
+}
+)
+
+
+
+
+
+
+
+
+
+
+
 
 //App.use is a middleware function 
 // app.get('/',function(request,respond,next){

@@ -1,12 +1,21 @@
 //Create a variable which require express
 const express = require('express');
+//import the routes 
+const routes = require('./src/routes/cmRoutes')
 //const path = require('path')
 //Initialize a variable called app with express
 const app = express();
 
-
-//App.use is a middleware function set a static folder
-//app.use(express.static(path.join(__dirname,'public')))
+//App.use is a middleware function 
+// app.get('/',function(request,respond,next){
+//     console.log('request method',request.method)
+//     next();
+// },function(request,respond,next){
+//     console.log('Original url ',request.originalUrl)
+//     next();
+// },function(request,respond,next){
+//     console.log('Request was successful ')
+// })
 
 
 

@@ -1,27 +1,23 @@
 //Method chaining
 const routes = (app)=>{
-//Creating the endpoints for home
-app.get('/',(request,responds)=>{
-    //Send respond to the broswer
-    responds.send("<h1>Hello world hvhhj </h1>");
-})
 
-//Creating the endpoints for post
-app.post('/',(request,responds)=>{
-    //Send respond to the broswer
-    responds.send("<h1>Post something </h1>");
-})
+    //Chaining all the routes to use app.route function
+    app.route('/')
+    .get( (request,respond)=>{
+        respond.send("This is a get method")
+    })
 
-//Creating the endpoints for put
-app.put('/',(request,responds)=>{
-    //Send respond to the broswer
-    responds.send("<h1> `put something</h1>");
-})
+    .put( (request,respond)=>{
+        respond.send("This is a put method")
+    })
 
-//Creating the endpoints for put
-app.delete('/',(request,responds)=>{
-    //Send respond to the broswer
-    responds.send("<h1> `delete something</h1>");
-})
+    .post( (request,respond)=>{
+        respond.send("This is a post method")
+    })
+
+    .delete( (request,respond)=>{
+        respond.send("This is a delete method")
+    })
 }
+
 
